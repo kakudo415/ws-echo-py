@@ -1,7 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.websocket("/")
+async def handler(ws: WebSocket):
+    await ws.accept()
+    while True:
+        data = await ws.receive_text()
+        await ws.send_text(data)
