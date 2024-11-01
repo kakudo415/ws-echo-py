@@ -1,11 +1,12 @@
 # ws-echo-py
 
-アクセスしてきたユーザーを部屋ごとに振り分け、WebSocketで部屋ごとにメッセージを中継するサーバーの例です。
+アクセスしてきたユーザーを部屋ごとに振り分け、それぞれの部屋でメッセージをブロードキャストするWebSocketサーバーのPython実装です。
+
+[Ryosuke0425/Tanks_GroupE](https://github.com/Ryosuke0425/Tanks_GroupE)のためのプロトタイプとして作成しました。
 
 ## Installation
 
-このexampleは[uv](https://docs.astral.sh/uv/)を使っています。
-実行するには、まずuvをインストールしてください。
+このプロジェクトはパッケージ・プロジェクトマネージャーとして[astral-sh/uv](https://docs.astral.sh/uv/)を使っています。
 
 2024年11月現在、macOSとLinuxでは以下のコマンドでインストールできます。
 
@@ -13,8 +14,28 @@
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-インストールが完了したら、以下のコマンドでこのexampleを実行できます。
+`uv`のインストールが完了したら、依存関係のインストールをします。
 
 ```sh
-uv run main.py
+uv sync
+```
+
+## Usage
+
+WebSocketサーバーの起動は以下を実行してください。
+
+```sh
+uv run fastapi dev
+```
+
+## Note
+
+### Ruffがいい感じ
+
+PythonのFormatter・Linterの[Ruff](https://docs.astral.sh/ruff/)がいい感じでした。
+
+Installationの手順に従っていれば`uvx`が使えるはずなので、そのままプロジェクト全体を次のようにフォーマットできます。
+
+```sh
+uvx ruff format .
 ```
