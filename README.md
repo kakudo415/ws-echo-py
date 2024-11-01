@@ -4,7 +4,16 @@
 
 [Ryosuke0425/Tanks_GroupE](https://github.com/Ryosuke0425/Tanks_GroupE)のためのプロトタイプとして作成しました。
 
-## Installation
+## Implementation Status
+
+- [ ] 部屋の区別なくテキストメッセージをブロードキャストする
+- [ ] 部屋の区別なくJSONメッセージをブロードキャストする
+- [ ] ユーザーを部屋ごとに振り分ける
+- [ ] 部屋ごとにJSONメッセージをブロードキャストする
+
+## Usage
+
+### Installation
 
 このプロジェクトはパッケージ・プロジェクトマネージャーとして[astral-sh/uv](https://docs.astral.sh/uv/)を使っています。
 
@@ -20,7 +29,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv sync
 ```
 
-## Usage
+### Running the Server
 
 WebSocketサーバーの起動は以下を実行してください。
 
